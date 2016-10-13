@@ -31,7 +31,7 @@ public class CalculatorTest {
 	
 	@Test
     public void testNewline(){
-    	assertEquals(6, Calculator.add("1\n2,3"));
+    	assertEquals(6, Calculator.add("1\n2\n3"));
     }
 	
 }
