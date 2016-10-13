@@ -30,8 +30,6 @@ public class Calculator {
 	
 	return numbers.split("\n");
 	}
-	
-	
       
     private static int sum(String[] numbers){
  	    int total = 0;
