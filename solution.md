@@ -15,12 +15,12 @@ rm -r classes/*
 Compile tests:
 ```sh
 #!/bin/bash
-javac -classpath "classes/:lib/junit-4.11.jar" src/test/java/is/ru/stringcalculator/*.java -d classes
+javac -classpath "classes/;lib/junit-4.11.jar" src/test/java/is/ru/stringcalculator/*.java -d classes
 ```
 Unit Test:
 ```sh
 #!/bin/bash
-java -cp "classes/:lib/junit-4.11.jar:lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore is.ru.stringcalculator.CalculatorTest
+java -cp "classes/;lib/junit-4.11.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore is.ru.stringcalculator.CalculatorTest
 ```
 
  Build and Test:
