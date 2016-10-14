@@ -57,7 +57,6 @@ public class CalculatorTest {
 		try
 		{
 			Calculator.add("2,-4,3,-5");
-			//fail();
 		}
 		catch(Exception e)
 		{
@@ -74,5 +73,4 @@ public class CalculatorTest {
     public void differentDelimiter(){
     	assertEquals(3, Calculator.add("//;\n1;2"));
     }
-	
 }

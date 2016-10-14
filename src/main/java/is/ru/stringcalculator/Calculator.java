@@ -1,18 +1,25 @@
 package is.ru.stringcalculator;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class Calculator {
 
 	public static int add(String text){
+		String del = ",|\n";
+		String numWithoutDel = text;
 		if(text.equals("")){
 			return 0;
 		}
+		if(text.startsWith("//"))
+		{
+			int delIndex = text.indexOf("//") + 2;
+			del = text.substring(delIndex, delIndex + 1);
+			numWithoutDel = text.substring(text.lastIndexOf("\n") + 1);
+			checkNegatives(splitNumbers(numWithoutDel, del));
+			return sum(splitNumbers(numWithoutDel, del));
+		}
 		else if(text.contains(",") || text.contains("\n"))
 		{
-			checkNegatives(splitNumbers(text));
-			return sum(splitNumbers(text));
+			checkNegatives(splitNumbers(numWithoutDel, del));
+			return sum(splitNumbers(numWithoutDel, del));
 		}
 		else
 			return 1;
@@ -24,9 +31,9 @@ public class Calculator {
 		return num;
 	}
 
-	private static String[] splitNumbers(String numbers){
+	private static String[] splitNumbers(String numbers, String delimiter){
 	    
-		return numbers.split(",|\n");
+		return numbers.split(delimiter);
 	}
       
     private static int sum(String[] numbers){
