@@ -65,5 +65,10 @@ public class CalculatorTest {
 		}
     }
 	
+	@Test
+    public void greaterThan1000(){
+    	assertEquals(2, Calculator.add("1001,2"));
+    }
+	
 	
 }
